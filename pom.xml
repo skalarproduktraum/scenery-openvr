@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+		http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<properties>
+		<enforcer.skip>true</enforcer.skip>
+		<maven.javadoc.skip>true</maven.javadoc.skip>
+	</properties>
+ 
+    <groupId>scenery</groupId>
+	<artifactId>openvr</artifactId>
+	<version>0.1</version>
+
+    <name>OpenVR bindings for Java, factored out from JMonkeyVR</name>
+
+    <profiles>
+        <profile>
+            <id>development</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <dependencies>
+            </dependencies>
+        </profile>
+        <profile>
+            <id>production</id>
+            <dependencies>
+            </dependencies>
+        </profile>
+    </profiles>
+    <dependencies>
+		<dependency>
+			<groupId>com.apple</groupId>
+			<artifactId>AppleJavaExtensions</artifactId>
+			<version>1.4</version>
+		</dependency>		
+        <dependency> <groupId>com.nativelibs4java</groupId> <artifactId>jnaerator-runtime</artifactId> <version>0.9.10-SNAPSHOT</version> <scope>compile</scope> </dependency>
+    	</dependencies>
+
+	<repositories>
+        <repository> <id>nativelibs4java-repo</id> <url>http://nativelibs4java.sourceforge.net/maven</url> </repository> 
+		<repository>
+			<id>imagej.public</id>
+			<url>http://maven.imagej.net/content/groups/public</url>
+		</repository>
+		<repository>
+	        <snapshots>
+	            <enabled>false</enabled>
+	        </snapshots>
+	        <id>bintray-CoreMem</id>
+	        <name>bintray</name>
+	        <url>http://dl.bintray.com/clearcontrol/ClearControl</url>
+		</repository>
+		<repository>
+	        <snapshots>
+	            <enabled>false</enabled>
+	        </snapshots>
+	        <id>bintray-clearvolume-ClearVolume</id>
+	        <name>bintray</name>
+	        <url>http://dl.bintray.com/clearvolume/ClearVolume</url>
+		</repository>
+	</repositories>
+	
+
+	<build>
+	
+	<plugins>
+		<plugin>
+	    <groupId>org.apache.maven.plugins</groupId>
+	    <artifactId>maven-javadoc-plugin</artifactId>
+	    <version>2.9</version>
+	    <executions>
+	        <execution>
+	            <id>attach-javadocs</id>
+	            <goals>
+	                <goal>jar</goal>
+	            </goals>
+	            <configuration>
+	              <failOnError>false</failOnError>
+	            </configuration>
+	        </execution>
+	    </executions>
+		</plugin>
+        <plugin><groupId>com.nativelibs4java</groupId> <artifactId>maven-jnaerator-plugin</artifactId> <version>0.9.9</version> </plugin>
+      </plugins>
+	</build>
+  
+</project>
