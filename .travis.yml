@@ -1,0 +1,12 @@
+language: java
+
+matrix:
+  include:
+    - os: linux
+      jdk: oraclejdk8
+      sudo: false
+    - os: osx
+      osx_image: xcode7.3
+
+script: 
+  - mvn clean package
