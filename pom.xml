@@ -8,11 +8,32 @@
         <maven.javadoc.skip>true</maven.javadoc.skip>
     </properties>
 
-    <groupId>scenery</groupId>
-    <artifactId>openvr</artifactId>
+    <parent>
+        <groupId>org.scijava</groupId>
+        <artifactId>pom-scijava</artifactId>
+        <version>10.6.0</version>
+    </parent>
+
+    <groupId>net.clearvolume</groupId>
+    <artifactId>scenery-openvr</artifactId>
     <version>0.1.0.2</version>
 
     <name>OpenVR bindings for Java, factored out from JMonkeyVR</name>
+
+    <scm>
+        <connection>scm:git:git://github.com/skalarproduktraum/scenery-openvr</connection>
+        <developerConnection>scm:git:git@github.com:skalarproduktraum/scenery-openvr</developerConnection>
+        <tag>HEAD</tag>
+        <url>https://github.com/skalarproduktraum/scenery-openvr</url>
+    </scm>
+    <issueManagement>
+        <system>GitHub</system>
+        <url>https://github.com/skalarproduktraum/scenery-openvr/issues</url>
+    </issueManagement>
+    <ciManagement>
+        <system>Travis</system>
+        <url>http://travis-ci.org/skalarproduktraum/scenery-openvr/</url>
+    </ciManagement>
 
     <profiles>
         <profile>
