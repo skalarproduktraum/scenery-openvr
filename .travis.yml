@@ -1,5 +1,10 @@
 language: java
 
+env:
+  global:
+    - secure: "bZjNbN8kQ6ErvuawtqZ0VOS9T9LAGirTED8TQoZN/wZDCVzq9iUx1MlCRrllAOZiLioN6fYohwoItzGaHWp2hvq4qm0INFWZDzIHy06UKa/PP42qQ5xYaGeIrewWoLTxdsA5iz4sTdY/dCIYeMpbFNenTjHrfMr8qwU0aQIN4MfxPj+Q/LpgDErEG2hx37Lg9M0AfN6HQFEsxWiZhZehzndZWylx2q1Jdoxp5RiCM3cqK7dTOxbQNjOHGiulmY3VMpKZyrkLSzgPxWAOj/rS4MsyFlyeBm75W8vGx4d2ceedKg2xzsyweoqXraIOMYCA+GvKic3bnqUHo8ftjsbz2kb1K+QrxAUt8Tfgo+9c92nx5oaf6LisbJrooAxjrOPRod9sneSitZLWMjvqyRi9tJNp2ZTJ4tcKvt/Nx1IGdF4Idm0YEDuoAEW4C0v2CX/CjnBykfZOJfdjfADaK2S2pdb/ykuA1QKyNjNBXivZIhHh4cTSAiSi5+YHhoaTs+MB++1hIgoafWSfIGeSKFg4GCaBQ1zDDv82tjxyME2Fv/Bg7/g1rdTZnrsdmLgZ8dainiLId8Mprl9N8G0asnLdZscMZEtMAXVUOdA8Kvmcntq5RqGzGRgeJAYvIBg+zsjNLfZcscWR4Cj0FOemkeKlMn04G0H37SzVBRs3jDpf7bU="
+    - secure: "Nnt6mAc6QOFsrBbq2PiNq51Genqa3ed+zHP5IcW8LzA/36pxzAjJ85jeFaZtgUqTd3tcL+ocu9ubQlPwi143FVc1iqJGgcJEjiDwoLV1HS8L90i+HkrAZONt0K/DN4/b5WTraDGH7Pk6/Emv8dwt9wHibrFvQSLqag7FfydaxCVPrdLXie+FPxzTM6WaL7u6PBNHVotzVaFrbC8z1+xbiHoilKjTUslLWFcNqsuDxlCxZRWI8SXWdPtr7uPwuDC1GdSHqsEqBKgEUJ8a+71plcL1kWUHUabNJv1XU6CT0Gt0nJGOhg64RGvDZFFs6yqLxKz5rBGxVGw1c/DNHsZ2hFdBmMm6WUexOOP4fQRun1LShNxVTHE2ghRJxb0Eo4G50A+Va6UiqMHFEcW0IL9Ru4Eh2Is9UAWsT/9vSMBSQq+fazTGpsVZGm22fEwKR2CTcSVS75MTwAjn7ZuDPWUbo0tmNZkqFHIWv5WblxCS1SQFXtVBzCqCeyZc3lQ6tycC9o1pp8XOLGyV7tcdo13+aTW5rocVYi4In9ZPBBOX3bg6TWhalomt0K9Lc632R8h0s8MN0kiAAKgLnZdVB0G+2gLO9N70ufXrO5NNU5xw5NvC9DYTD3cv6+DFqDHZ2GT4koJh5YAfbsZqqnL/vCAwLpDiW4ZfUdC/59yZKbsF14s="
+
 matrix:
   include:
     - os: linux
@@ -10,3 +15,6 @@ matrix:
 
 script: 
   - mvn clean package
+
+after_success:
+- test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && mvn -U -Pdeploy-to-imagej clean deploy --settings settings.xml
