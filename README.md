@@ -2,12 +2,12 @@
 
 Based on @phr00t's [jMonkeyVR](https://github.com/phr00t/jMonkeyVR/). Thanks for the awesome work!
 
-[![Build Status](https://travis-ci.org/skalarproduktraum/scenery-openvr.svg?branch=master)](https://travis-ci.org/skalarproduktraum/scenery-openvr) [![Build status](https://ci.appveyor.com/api/projects/status/bnvb239yd8x4vqqa/branch/master?svg=true)](https://ci.appveyor.com/project/skalarproduktraum/scenery-openvr/branch/master) 
+[![Build Status](https://travis-ci.org/scenerygraphics/jopenvr.svg?branch=master)](https://travis-ci.org/skalarproduktraum/scenery-openvr) [![Build status](https://ci.appveyor.com/api/projects/status/bnvb239yd8x4vqqa/branch/master?svg=true)](https://ci.appveyor.com/project/skalarproduktraum/scenery-openvr/branch/master) 
 
 # Compiling
 
 ```
-git clone --recursive https://github.com/skalarproduktraum/scenery-openvr
+git clone --recursive https://github.com/scenerygraphics/jopenvr
 mvn clean package install
 ```
 
@@ -19,7 +19,7 @@ mvn clean package install
 <dependency>
     <groupId>graphics.scenery</groupId>
     <artifactId>jopenvr</artifactId>
-    <version>1.0.5</version>
+    <version>1.0.5-1</version>
 </dependency>
 ```
 

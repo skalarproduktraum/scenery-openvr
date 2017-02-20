@@ -16,7 +16,7 @@
 
     <groupId>graphics.scenery</groupId>
     <artifactId>jopenvr</artifactId>
-    <version>1.0.5</version>
+    <version>1.0.5.1-SNAPSHOT</version>
 
     <name>OpenVR 1.0.5 bindings for the JavaVM</name>
 
@@ -24,15 +24,15 @@
         <connection>scm:git:git://github.com/skalarproduktraum/scenery-openvr</connection>
         <developerConnection>scm:git:git@github.com:skalarproduktraum/scenery-openvr</developerConnection>
         <tag>HEAD</tag>
-        <url>https://github.com/skalarproduktraum/scenery-openvr</url>
+        <url>https://github.com/scenerygraphics/jopenvr</url>
     </scm>
     <issueManagement>
         <system>GitHub</system>
-        <url>https://github.com/skalarproduktraum/scenery-openvr/issues</url>
+        <url>https://github.com/scenerygraphics/jopenvr/issues</url>
     </issueManagement>
     <ciManagement>
         <system>Travis</system>
-        <url>http://travis-ci.org/skalarproduktraum/scenery-openvr/</url>
+        <url>http://travis-ci.org/scenerygraphics/jopenvr/</url>
     </ciManagement>
 
     <profiles>
@@ -71,6 +71,17 @@
         </repository> 
     </repositories>
 
+    <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+    </distributionManagement>
+
     <build>
         <plugins>
             <plugin>
@@ -88,6 +99,17 @@
                         </configuration>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.sonatype.plugins</groupId>
+                <artifactId>nexus-staging-maven-plugin</artifactId>
+                <version>1.6.7</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <serverId>ossrh</serverId>
+                    <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+                    <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>com.nativelibs4java</groupId>
