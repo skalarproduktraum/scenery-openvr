@@ -10,14 +10,14 @@
 
     <groupId>graphics.scenery</groupId>
     <artifactId>jopenvr</artifactId>
-    <version>1.0.5.3</version>
+    <version>1.0.5.4-SNAPSHOT</version>
 
     <name>OpenVR 1.0.5 bindings for the JavaVM</name>
 
     <scm>
         <connection>scm:git:git://github.com/skalarproduktraum/scenery-openvr</connection>
         <developerConnection>scm:git:git@github.com:skalarproduktraum/scenery-openvr</developerConnection>
-        <tag>jopenvr-1.0.5.3</tag>
+        <tag>HEAD</tag>
         <url>https://github.com/scenerygraphics/jopenvr</url>
     </scm>
     <issueManagement>
