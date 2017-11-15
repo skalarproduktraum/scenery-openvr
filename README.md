@@ -1,3 +1,11 @@
+---
+## This package is deprecated and will not be updated anymore.
+
+If you require OpenVR support in your Java projects, have a look at [`lwjgl-openvr`](https://lwjgl.org) ([Example code](https://github.com/LWJGL/lwjgl3/blob/master/modules/core/src/test/java/org/lwjgl/demo/openvr/HelloOpenVR.java)).
+
+---
+
+
 # OpenVR wrappers, JVM flavour
 
 Based on @phr00t's [jMonkeyVR](https://github.com/phr00t/jMonkeyVR/). Thanks for the awesome work!
